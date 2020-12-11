@@ -6,6 +6,7 @@ public class StreamApp {
 
     public static int streamOperations(IntStream intStream) {
         //IntStream intStream = AsIntStream.of(-1, 0, 1, 2, 3); // input values
+        System.out.println(intStream.filter(x -> x > 0));
         int res = intStream
                 .filter(x -> x > 0) // 1, 2, 3
                 .map(x -> x * x) // 1, 4, 9

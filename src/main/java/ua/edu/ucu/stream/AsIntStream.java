@@ -143,7 +143,6 @@ public class AsIntStream implements IntStream, Iterable<Integer> {
             public Integer next() {
                 return cur.next();
             }
-
         };
         return this;
     }

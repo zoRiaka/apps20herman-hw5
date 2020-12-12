@@ -42,5 +42,39 @@ public class StreamAppTest {
         String result = StreamApp.streamForEach(intStream);
         assertEquals(expResult, result);        
     }
-    
+
+    @Test
+    public void testAvrarage() {
+        double expResult = 1.0;
+        double result = StreamApp.StreamAvar(intStream);
+        assertEquals(expResult, result, 0.0001);
+    }
+
+    @Test
+    public void testMin() {
+        int expResult = -1;
+        int result = StreamApp.StreamMin(intStream);
+        assertEquals(expResult, result, 0.0001);
+    }
+
+    @Test
+    public void testMax() {
+        int expResult = 3;
+        int result = StreamApp.StreamMax(intStream);
+        assertEquals(expResult, result, 0.0001);
+    }
+
+    @Test
+    public void testSum() {
+        int expResult = 5;
+        int result = StreamApp.StreamSum(intStream);
+        assertEquals(expResult, result, 0.0001);
+    }
+
+    @Test
+    public void testCount() {
+        long expResult = 5;
+        long result = StreamApp.StreamCount(intStream);
+        assertEquals(expResult, result, 0.0001);
+    }
 }

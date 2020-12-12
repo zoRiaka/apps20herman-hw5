@@ -25,4 +25,24 @@ public class StreamApp {
         intStream.forEach(x -> str.append(x));
         return str.toString();
     }
+
+    public static double StreamAvar(IntStream intStream) {
+        return intStream.average();
+    }
+
+    public static int StreamMin(IntStream intStream) {
+        return intStream.min();
+    }
+
+    public static int StreamMax(IntStream intStream) {
+        return intStream.max();
+    }
+
+    public static int StreamSum(IntStream intStream) {
+        return intStream.sum();
+    }
+
+    public static long StreamCount(IntStream intStream) {
+        return intStream.count();
+    }
 }

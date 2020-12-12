@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 
-public class AsIntStream implements IntStream {
+public class AsIntStream implements IntStream ,Iterable<Integer> {
     private Iterator<Integer> stream;
     private ArrayList<Integer> array;
 
@@ -32,7 +32,7 @@ public class AsIntStream implements IntStream {
     public Double average() {
         double sum = 0;
         int size = 0;
-        for (int val : this.array) {
+        for (int val : this) {
             sum += val;
             size++;
         }
@@ -41,12 +41,12 @@ public class AsIntStream implements IntStream {
 
     @Override
     public Integer max() {
-        return this.reduce(stream.next(), Math::max);
+        return this.reduce(Integer.MIN_VALUE, Math::max);
     }
 
     @Override
     public Integer min() {
-        return this.reduce(stream.next(), Math::min);
+        return this.reduce(Integer.MAX_VALUE, Math::min);
     }
 
     @Override
@@ -60,6 +60,7 @@ public class AsIntStream implements IntStream {
     }
 
 
+    @Override
     public Iterator<Integer> iterator() {
         if (this.stream == null) {
             return array.iterator();
@@ -93,7 +94,7 @@ public class AsIntStream implements IntStream {
 
     @Override
     public void forEach(IntConsumer action) {
-        for (int value : this.array) {
+        for (int value : this) {
             action.accept(value);
         }
     }
@@ -148,7 +149,7 @@ public class AsIntStream implements IntStream {
         int el = identity;
         int len = 0;
 
-        for (int value : this.array) {
+        for (int value : this) {
             el = op.apply(el, value);
             len++;
         }

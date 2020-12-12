@@ -124,13 +124,13 @@ public class AsIntStream implements IntStream, Iterable<Integer> {
 
     @Override
     public IntStream flatMap(IntToIntStreamFunction func) {
-        this.stream = new Iterator<Integer>() {
+        stream = new Iterator<Integer>() {
             private final Iterator<Integer> iterat = iterator();
             private Iterator<Integer> cur;
             @Override
             public boolean hasNext() {
-                while (cur == null ||
-                        !cur.hasNext()) {
+                while (cur == null
+                        || !cur.hasNext()) {
                     if (!iterat.hasNext()) {
                         return false;
                     }

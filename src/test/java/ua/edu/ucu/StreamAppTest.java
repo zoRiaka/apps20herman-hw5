@@ -46,35 +46,35 @@ public class StreamAppTest {
     @Test
     public void testAvrarage() {
         double expResult = 1.0;
-        double result = StreamApp.StreamAvar(intStream);
+        double result = StreamApp.streamAvar(intStream);
         assertEquals(expResult, result, 0.0001);
     }
 
     @Test
     public void testMin() {
         int expResult = -1;
-        int result = StreamApp.StreamMin(intStream);
+        int result = StreamApp.streamMin(intStream);
         assertEquals(expResult, result, 0.0001);
     }
 
     @Test
     public void testMax() {
         int expResult = 3;
-        int result = StreamApp.StreamMax(intStream);
+        int result = StreamApp.streamMax(intStream);
         assertEquals(expResult, result, 0.0001);
     }
 
     @Test
     public void testSum() {
         int expResult = 5;
-        int result = StreamApp.StreamSum(intStream);
+        int result = StreamApp.streamSum(intStream);
         assertEquals(expResult, result, 0.0001);
     }
 
     @Test
     public void testCount() {
         long expResult = 5;
-        long result = StreamApp.StreamCount(intStream);
+        long result = StreamApp.streamCount(intStream);
         assertEquals(expResult, result, 0.0001);
     }
 }

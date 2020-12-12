@@ -10,7 +10,8 @@ public class StreamApp {
         int res = intStream
                 .filter(x -> x > 0) // 1, 2, 3
                 .map(x -> x * x) // 1, 4, 9
-                .flatMap(x -> AsIntStream.of(x - 1, x, x + 1)) // 0, 1, 2, 3, 4, 5, 8, 9, 10
+                .flatMap(x -> AsIntStream.of(x - 1, x, x + 1))
+                // 0, 1, 2, 3, 4, 5, 8, 9, 10
                 .reduce(0, (sum, x) -> sum += x); // 42
         return res;
     }
@@ -26,23 +27,23 @@ public class StreamApp {
         return str.toString();
     }
 
-    public static double StreamAvar(IntStream intStream) {
+    public static double streamAvar(IntStream intStream) {
         return intStream.average();
     }
 
-    public static int StreamMin(IntStream intStream) {
+    public static int streamMin(IntStream intStream) {
         return intStream.min();
     }
 
-    public static int StreamMax(IntStream intStream) {
+    public static int streamMax(IntStream intStream) {
         return intStream.max();
     }
 
-    public static int StreamSum(IntStream intStream) {
+    public static int streamSum(IntStream intStream) {
         return intStream.sum();
     }
 
-    public static long StreamCount(IntStream intStream) {
+    public static long streamCount(IntStream intStream) {
         return intStream.count();
     }
 }
